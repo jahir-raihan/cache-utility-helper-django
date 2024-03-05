@@ -58,7 +58,7 @@ class ExampleView(View):
         # Or if the cache data is compressed then 
         cache_data_compressed = GetOrSetCache(key).get_compressed_cached_data()
         
-        # Now if there's now cache data with the given key then you can set up new cache data
+        # Now if there's no cache data with the given key then you can set up new cache data
         if not cache_data or cache_data_compressed:
             
             renew_time = 30*30 # The cache will last until this renew time 
