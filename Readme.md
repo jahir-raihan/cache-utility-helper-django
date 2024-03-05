@@ -3,13 +3,29 @@
 **Just a simple class to simplify setting and getting `Django-Based`
 `Redis` `compressed / uncompressed` cache data.**
 
+## Why we need to compress cache data or why do we even need cache?
+
+> **Just Imagine you've got a view which returns list of books for every request from frontend. Now to get the list you
+> have to query over the database table for every request which is not good. Suppose 100k user accesses the same result and your'e
+> querying the database for 100k times. Which is not good for computation, resource and response time complexity. To avoid this
+> we use cache to handle frequently accessed results. But cacheing may come in different faces,
+> suppose your'e caching a related video queryset, which is unique for each video. Now Imagine 100k users opens 100k
+> videos and you have to store 100k combination of cached data which is disaster. And for example if a cache size is suppose 50kb
+> then just imagine the storage will be used 50*100000 kb.** <br>
+> 
+> **So to avoid these circumstances and to utilize caching more efficiently, compressing the queryset comes in 
+> handy while saving cache, yes there is a chance to lose some data while compressing but that isn't much to be noticed.**
+> 
+> <br>**To get you an overview, a raw queryset may be size of 100kb but when compressed it will become 10 time smaller eg: 10kb or less.**
+
+
 ## Requirements & Imports
 **Note: It can be only used inside a django project. For others, Dunno!**
 
 These packages are included by default.
 ```
 zlib, json
-# And Django as framework
+# And Django/rest_framework as framework
 ```
 
 ## How to use
@@ -21,7 +37,7 @@ from get_or_set_cache import GetOrSetCache
 from example_serializer import ExampleSerializer
 from django.views import View
 from some_models import ExampleModel
-from django.core import cache
+
 
 class ExampleView(View):
     
@@ -63,3 +79,7 @@ class ExampleView(View):
         return cache_data or cache_data_compressed
 
 ```
+
+## Hit a star If it helps you.
+
+<p style="padding:2em; background:black; color:white; font-weight:bold; font-size:24px; text-align:center;">Happy Coding . . .</p>
