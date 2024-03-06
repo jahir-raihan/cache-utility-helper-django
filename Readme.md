@@ -9,8 +9,8 @@
 > have to query over the database table for every request which is not good. Suppose 100k user accesses the same result and your'e
 > querying the database for 100k times. Which is not good for computation, resource and response time complexity. To avoid this
 > we use cache to handle frequently accessed results. But cacheing may come in different faces,
-> suppose your'e caching a related video queryset, which is unique for each video. Now Imagine 100k users opens 100k
-> videos and you have to store 100k combination of cached data which is disaster. And for example if a cache size is suppose 50kb
+> suppose you're caching a related video queryset, which is unique for each video. Now Imagine 100k users opens 100k
+> videos, and you have to store 100k combination of cached data which is disaster. And for example if a cache size is suppose 50kb
 > then just imagine the storage will be used 50*100000 kb.** <br>
 > 
 > **So to avoid these circumstances and to utilize caching more efficiently, compressing the queryset comes in 
