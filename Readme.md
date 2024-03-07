@@ -82,4 +82,4 @@ class ExampleView(View):
 
 ## Hit a star If it helps you.
 
-<p style="padding:2em; background:black; color:white; font-weight:bold; font-size:24px; text-align:center;">Happy Coding . . .</p>
+<p style="padding:2em; background:black; color:white; font-weight:bold; font-size:24px; text-align:center;">Happy Coding . . . .</p>
